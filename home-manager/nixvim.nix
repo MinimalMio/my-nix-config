@@ -47,6 +47,10 @@
 			  key = "<Space>t";
 				action = ":ToggleTerm<CR>";
 			}
+			{
+			  key = "<Space>w";
+				action = ":w<CR>";
+			}
     ];
   };
 }
