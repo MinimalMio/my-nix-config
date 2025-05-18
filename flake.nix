@@ -56,11 +56,11 @@
 
     nixosConfigurations.ksakura-qemu-vm = nixpkgs-2411.lib.nixosSystem {
       system = "x86_64-linux";
-			modules = [
-			  ./devices/common/configuration.nix
-				./devices/ksakura-qemu-vm/configuration.nix
-				./devices/ksakura-qemu-vm/hardware-configuration.nix
-			];
-		};
+      modules = [
+        ./devices/common/configuration.nix
+        ./devices/ksakura-qemu-vm/configuration.nix
+        ./devices/ksakura-qemu-vm/hardware-configuration.nix
+      ];
+    };
   };
 }

@@ -1,7 +1,7 @@
-{ ... }:
+{ config, lib, pkgs, ... }:
 
 {
   environment.systemPackages = with pkgs; [
-	  vim wget git
-	];
+    vim wget git
+  ];
 }
