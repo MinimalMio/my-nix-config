@@ -9,13 +9,12 @@
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda";
   
-  networking.hostname = "ksakura-qemu-vm";
+  networking.hostName = "ksakura-qemu-vm";
   networking.networkmanager.enable = true;
 
   time.timeZone = "Asia/Shanghai";
 
   nix.settings.substituters = lib.mkForce [ "http://mirrors.ustc.edu.cn/nix-channels/store" ];
-  nix.settings.experimental-features = [ "nix-command flake" ];
   nixpkgs.config.allowUnfree = true;
 
   i18n.defaultLocale = "en_US.UTF-8";
@@ -35,7 +34,7 @@
     packages = with pkgs; [
       tree
     ];
-  }
+  };
 
   programs.firefox.enable = true;
 
@@ -49,6 +48,5 @@
     enableSSHSupport = true;
   };
 
-  system.copySystemConfiguration = true;
   system.stateVersion = "24.11";
 }
