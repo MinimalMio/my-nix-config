@@ -28,7 +28,7 @@
           mapping = {
             "<CR>" = "cmp.mapping.confirm({ select = true })";
             "<C-e>" = "cmp.mapping.close()";
-            "<Tab>" = "cmp.mapping(cmp.mapping.select_next_item(), { 'i', 's' })"
+            "<Tab>" = "cmp.mapping(cmp.mapping.select_next_item(), { 'i', 's' })";
           };
           sources = [
             { name = "nvim_lsp"; }
