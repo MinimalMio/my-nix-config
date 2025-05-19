@@ -2,22 +2,12 @@
 
 {
   programs.nixvim = {
-    lsp = {
-      servers = {
-        clangd = {
-          enabled = true;
-          settings = {
-            cmd = [
-              "clangd"
-              "--background-index"
-            ];
-            filetypes = [
-              "c" "cpp"
-            ];
-            root_markers = [
-              "compile_commands.json"
-              "compile_flags.txt"
-            ];
+    plugins = {
+      lsp = {
+        enable = true;
+        servers = {
+          clangd = {
+            enable = true;
           };
         };
       };
