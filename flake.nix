@@ -44,7 +44,7 @@
               imports = [
                 nixvim-2405.homeManagerModules.nixvim
                 ./home-manager/git.nix
-                ./home-manager/nixvim.nix
+                ./home-manager/nixvim/nixvim.nix
               ];
 
               home.stateVersion = "24.05";  
