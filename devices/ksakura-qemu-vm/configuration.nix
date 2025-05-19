@@ -15,7 +15,6 @@
   time.timeZone = "Asia/Shanghai";
 
   nix.settings.substituters = lib.mkForce [ "http://mirrors.ustc.edu.cn/nix-channels/store" ];
-  nixpkgs.config.allowUnfree = true;
 
   i18n.defaultLocale = "en_US.UTF-8";
 
