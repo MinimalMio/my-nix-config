@@ -2,12 +2,10 @@
 
 {
   programs.nixvim = {
-    globals.mapleader = "<Space>";
-
     keymaps = [
       {
         mode = "n";
-        key = "<leader>e";
+        key = "<Space>e";
         action = ":NvimTreeToggle<CR>";
         options = {
           desc = "File Tree";
@@ -15,7 +13,7 @@
       }
       {
         mode = "n";
-        key = "<leader>t";
+        key = "<Space>t";
         action = ":ToggleTerm<CR>";
         options = {
           desc = "Terminal";
@@ -23,7 +21,7 @@
       }
       {
         mode = "n";
-        key = "<leader>w";
+        key = "<Space>w";
         action = ":w<CR>";
         options = {
           desc = "Save File";
