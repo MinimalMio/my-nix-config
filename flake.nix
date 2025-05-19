@@ -77,7 +77,7 @@
           home-manager = {
             useGlobalPkgs = true;
 
-            config = { ... }: {
+            users.sakura = { ... }: {
               imports = [
                 nixvim-2411.homeManagerModules.nixvim
                 ./home-manager/common/git.nix
