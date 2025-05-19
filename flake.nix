@@ -54,8 +54,7 @@
             config = { ... }: {
               imports = [
                 nixvim-2405.homeManagerModules.nixvim
-                ./home-manager/common/git.nix
-                ./home-manager/common/nixvim/nixvim.nix
+                ./home-manager/components/nixvim/nixvim.nix
                 ./home-manager/nix-on-droid/default.nix
               ];
 
@@ -83,8 +82,7 @@
             users.sakura = { ... }: {
               imports = [
                 nixvim-2411.homeManagerModules.nixvim
-                ./home-manager/common/git.nix
-                ./home-manager/common/nixvim/nixvim.nix
+                ./home-manager/components/nixvim/nixvim.nix
                 ./home-manager/ksakura-qemu-vm/default.nix
               ];
 
