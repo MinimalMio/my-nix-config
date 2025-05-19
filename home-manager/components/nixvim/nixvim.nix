@@ -3,7 +3,8 @@
 {
   imports = [
     ./plugins.nix
-  ];
+    ./keyboard.nix
+ ];
 
   programs.nixvim = {
     enable = true;
@@ -19,20 +20,5 @@
     colorschemes = {
       tokyonight.enable = true;
     };
-
-    keymaps = [
-      {
-        key = "<Space>e";
-        action = ":NvimTreeToggle<CR>";
-      }
-      {
-        key = "<Space>t";
-        action = ":ToggleTerm<CR>";
-      }
-      {
-        key = "<Space>w";
-        action = ":w<CR>";
-      }
-    ];
   };
 }
