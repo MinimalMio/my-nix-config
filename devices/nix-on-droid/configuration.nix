@@ -5,7 +5,7 @@
     vim procps killall diffutils findutils utillinux
     tzdata hostname man gnugrep gnupg gnused gnutar
     bzip2 gzip xz zip unzip binutils gcc ncurses
-    hyfetch fish openssh tree
+    hyfetch fish openssh tree clang-tools
   ];
 
   environment.etcBackupExtension = ".bak";

@@ -29,13 +29,19 @@
       }
       {
         mode = "n";
-        key = "<C-+>";
+        key = "<Space>eu";
         action = "kddpk";
+        options = {
+          desc = "Move Line Up";
+        };
       }
       {
         mode = "n";
-        key = "<C-->";
+        key = "<Space>ed";
         action = "ddp";
+        options = {
+          desc = "Move Line Down";
+        };
       }
     ];
   };

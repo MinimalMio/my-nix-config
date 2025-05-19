@@ -5,6 +5,9 @@
     plugins = {
       lualine.enable = true;
       which-key.enable = true;
+      nvim-autopairs.enable = true;
+      rainbow-delimiters.enable = true;
+      treesitter.enable = true;
       bufferline = {
         enable = true;
         offsets = [
@@ -19,9 +22,6 @@
       nvim-tree = {
         enable = true;
       };
-      nvim-autopairs.enable = true;
-      rainbow-delimiters.enable = true;
-      treesitter.enable = true;
       toggleterm = {
         enable = true;
       };

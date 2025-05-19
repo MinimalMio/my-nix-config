@@ -4,6 +4,7 @@
   imports = [
     ./plugins.nix
     ./keyboard.nix
+    ./lsp.nix
  ];
 
   programs.nixvim = {
