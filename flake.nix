@@ -21,7 +21,16 @@
       inputs.nixpkgs.follows = "nixpkgs-2405";
     };
 
-    # TODO: Normal Nix devices part.
+    # The Normal Devices
+    home-manager-2411 = {
+      url = "github:nix-community/home-manager/release-24.11";
+      inputs.nixpkgs.follows = "nixpkgs-2411";
+    };
+
+    nixvim-2411 = {
+      url = "github:nix-community/nixvim/nixos-24.11";
+      inputs.nixpkgs.follows = "nixpkgs-2411";
+    };
   };
 
   outputs = {
@@ -31,11 +40,13 @@
     nix-on-droid,
     home-manager-2405,
     nixvim-2405,
+    home-manager-2411,
+    nixvim-2411,
     }: {
     nixOnDroidConfigurations.default = nix-on-droid.lib.nixOnDroidConfiguration {
       pkgs = import nixpkgs-2405 { system = "aarch64-linux"; };
       modules = [
-        ./nix-on-droid.nix
+        ./devices/nix-on-droid/configuration.nix
         {
           home-manager = {
             useGlobalPkgs = true;
@@ -43,8 +54,9 @@
             config = { ... }: {
               imports = [
                 nixvim-2405.homeManagerModules.nixvim
-                ./home-manager/git.nix
-                ./home-manager/nixvim/nixvim.nix
+                ./home-manager/common/git.nix
+                ./home-manager/common/nixvim/nixvim.nix
+                ./home-manager/nix-on-droid/default.nix
               ];
 
               home.stateVersion = "24.05";  
@@ -60,6 +72,22 @@
         ./devices/common/configuration.nix
         ./devices/ksakura-qemu-vm/configuration.nix
         ./devices/ksakura-qemu-vm/hardware-configuration.nix
+        {
+          home-manager = {
+            useGlobalPkgs = true;
+
+            config = { ... }: {
+              imports = [
+                nixvim-2411.homeManagerModules.nixvim
+                ./home-manager/common/git.nix
+                ./home-manager/common/nixvim/nixvim.nix
+                ./home-manager/ksakura-qemu-vm/default.nix
+              ];
+
+              home.stateVersion = "24.11";
+            };
+          };
+        }
       ];
     };
   };
