@@ -72,6 +72,7 @@
         ./devices/common/configuration.nix
         ./devices/ksakura-qemu-vm/configuration.nix
         ./devices/ksakura-qemu-vm/hardware-configuration.nix
+        home-manager.nixosModules.home-manager
         {
           home-manager = {
             useGlobalPkgs = true;
