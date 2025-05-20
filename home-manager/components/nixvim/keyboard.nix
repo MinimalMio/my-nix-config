@@ -33,6 +33,14 @@
       }
       {
         mode = "n";
+        key = "<leader>q";
+        action = ":q<CR>";
+        options = {
+          desc = "Quit";
+        };
+      }
+      {
+        mode = "n";
         key = "<leader>eu";
         action = "kddpk";
         options = {
