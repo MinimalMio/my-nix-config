@@ -48,7 +48,6 @@
         system = "aarch64-linux";
       };
       modules = [
-        ./devices/common/configuration.nix
         ./devices/nix-on-droid/configuration.nix
         {
           home-manager = {
