@@ -10,13 +10,14 @@
 
   programs.nixvim = {
     enable = true;
-    
+
     opts = {
       number = true;
       tabstop = 2;
       softtabstop = 2;
       shiftwidth = 2;
       expandtab = true;
+      shell = "fish";
     };
 
     colorschemes = {

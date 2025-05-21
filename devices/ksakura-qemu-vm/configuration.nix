@@ -30,6 +30,7 @@
   users.users.sakura = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
+    shell = pkgs.fish;
     packages = with pkgs; [
       tree
     ];
@@ -38,7 +39,7 @@
   programs.firefox.enable = true;
 
   environment.systemPackages = with pkgs; [
-    konsole gcc gnumake binutils vscode clang-tools strace
+    konsole vscode strace
   ];
 
   programs.mtr.enable = true;

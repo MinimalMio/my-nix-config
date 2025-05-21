@@ -36,7 +36,7 @@
   outputs = {
     self,
     nixpkgs-2411,
-    nixpkgs-2405, 
+    nixpkgs-2405,
     nix-on-droid,
     home-manager-2405,
     nixvim-2405,
@@ -44,21 +44,23 @@
     nixvim-2411,
     }: {
     nixOnDroidConfigurations.default = nix-on-droid.lib.nixOnDroidConfiguration {
-      pkgs = import nixpkgs-2405 { system = "aarch64-linux"; };
+      pkgs = import nixpkgs-2405 {
+        system = "aarch64-linux";
+      };
       modules = [
+        ./devices/common/configuration.nix
         ./devices/nix-on-droid/configuration.nix
         {
           home-manager = {
             useGlobalPkgs = true;
-            
+
             config = { ... }: {
               imports = [
                 nixvim-2405.homeManagerModules.nixvim
-                ./home-manager/components/nixvim/nixvim.nix
-                ./home-manager/nix-on-droid/default.nix
+                ./home-manager/components/default.nix
               ];
 
-              home.stateVersion = "24.05";  
+              home.stateVersion = "24.05";
             };
           };
         }
@@ -82,8 +84,7 @@
             users.sakura = { ... }: {
               imports = [
                 nixvim-2411.homeManagerModules.nixvim
-                ./home-manager/components/nixvim/nixvim.nix
-                ./home-manager/ksakura-qemu-vm/default.nix
+                ./home-manager/components/default.nix
               ];
 
               home.stateVersion = "24.11";
