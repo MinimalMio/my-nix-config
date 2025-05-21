@@ -19,8 +19,8 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   services.xserver.enable = true;
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma6.enable = true;
+  services.xserver.displayManager.lightdm.enable = true;
+  #services.xserver.desktopManager.plasma6.enable = true;
 
   services.pipewire = {
     enable = true;
