@@ -3,7 +3,7 @@
 {
   # Packages for i3wm configuration.
   environment.systemPackages = with pkgs; [
-    rofi thunar st
+    rofi st ranger
   ];
 
   services.xserver.windowManager.i3.enable = true;
