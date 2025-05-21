@@ -8,7 +8,7 @@
 
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda";
-  
+
   networking.hostName = "ksakura-qemu-vm";
   networking.networkmanager.enable = true;
 
@@ -38,7 +38,7 @@
   programs.firefox.enable = true;
 
   environment.systemPackages = with pkgs; [
-    konsole gcc gnumake binutils vscode
+    konsole gcc gnumake binutils vscode clang-tools strace
   ];
 
   programs.mtr.enable = true;

@@ -41,7 +41,7 @@
       }
       {
         mode = "n";
-        key = "<leader>eu";
+        key = "<leader>bu";
         action = "kddpk";
         options = {
           desc = "Move Line Up";
@@ -49,7 +49,7 @@
       }
       {
         mode = "n";
-        key = "<leader>ed";
+        key = "<leader>bd";
         action = "ddp";
         options = {
           desc = "Move Line Down";
