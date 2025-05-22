@@ -94,5 +94,34 @@
         }
       ];
     };
+
+    nixosConfigurations.ksakura-pc = nixpkgs-2411.lib.nixosSystem {
+      pkgs = import nixpkgs-2411 {
+        system = "x86_64-linux";
+        config.allowUnfree = true;
+      };
+      modules = [
+        ./devices/common/configuration.nix
+        ./devices/ksakura-pc/configuration.nix
+        ./devices/ksakura-pc/hardware-configuration.nix
+        ./home-manager/components/i3/packages.nix
+        home-manager-2411.nixosModules.home-manager
+        {
+          home-manager = {
+            useGlobalPkgs = true;
+
+            users.sakura = { ... }: {
+              imports = [
+                nixvim-2411.homeManagerModules.nixvim
+                ./home-manager/components/default.nix
+                ./home-manager/components/i3/default.nix
+              ];
+
+              home.stateVersion = "24.11";
+            };
+          };
+        }
+      ];
+    };
   };
 }
