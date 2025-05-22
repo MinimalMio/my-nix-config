@@ -7,7 +7,7 @@
     config = {
       modifier = "Mod4";
       keybindings = lib.mkOptionDefault {
-        "${modifier}+r" = "exec rofi -show drun";
+        "Mod4+r" = "exec rofi -show drun";
       };
     };
   };
