@@ -27,10 +27,8 @@
         settings = {
           snippet.expand = "function(args) require('luasnip').lsp_expand(args.body) end";
           mapping = {
-            # "<CR>" = "cmp.mapping.confirm({ select = true })";
             "<TAB>" = "cmp.mapping.confirm({ select = true })";
             "<C-e>" = "cmp.mapping.close()";
-            # "<TAB>" = "cmp.mapping(cmp.mapping.select_next_item(), { 'i', 's' })";
             "<Up>" = ''
               cmp.mapping(function(fallback)
                 if require("cmp").visible() then

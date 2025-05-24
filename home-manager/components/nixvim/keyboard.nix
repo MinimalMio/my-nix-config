@@ -58,7 +58,7 @@
       {
         mode = "n";
         key = "<leader>[";
-        action = ":bprevious";
+        action = ":bprevious<CR>";
         options = {
           desc = "Prev Buffer";
         };
@@ -66,7 +66,7 @@
       {
         mode = "n";
         key = "<leader>]";
-        action = ":bnext";
+        action = ":bnext<CR>";
         options = {
           desc = "Next Buffer";
         };
