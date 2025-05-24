@@ -55,6 +55,22 @@
           desc = "Move Line Down";
         };
       }
+      {
+        mode = "n";
+        key = "<leader>[";
+        action = ":bprevious";
+        options = {
+          desc = "Prev Buffer";
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>]";
+        action = ":bnext";
+        options = {
+          desc = "Next Buffer";
+        };
+      }
     ];
   };
 }

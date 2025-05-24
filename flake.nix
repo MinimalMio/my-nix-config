@@ -105,6 +105,7 @@
         ./devices/common/i18n.nix
         ./devices/ksakura-pc/configuration.nix
         ./devices/ksakura-pc/hardware-configuration.nix
+        ./devices/ksakura-pc/nvidia.nix
         ./home-manager/components/i3/packages.nix
         home-manager-2411.nixosModules.home-manager
         {
