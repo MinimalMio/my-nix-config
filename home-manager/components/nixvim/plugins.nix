@@ -11,18 +11,17 @@
       web-devicons.enable = true;
       bufferline = {
         enable = true;
-        settings = {
-          options = {
-            offsets = [
-              {
-                filetype = "NvimTree";
-                text = "File Explorer";
-                highlight = "Directory";
-                text_align = "left";
-              }
-            ];
-          };
-        };
+        # Fallback changes:
+        # Compatible with nix-on-droid (now version 24.05)
+        # it dont support settings.options.offsets .
+        offsets = [
+          {
+            filetype = "NvimTree";
+            text = "File Explorer";
+            highlight = "Directory";
+            text_align = "left";
+          }
+        ];
       };
       nvim-tree = {
         enable = true;
