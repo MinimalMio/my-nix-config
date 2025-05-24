@@ -2,7 +2,7 @@
   description = "My NixOS/Nix-on-Droid config files.";
 
   inputs = {
-    nixpkgs-pc.url = "github:NixOS/nixpkgs/nixos-24.11";
+    nixpkgs-pc.url = "github:NixOS/nixpkgs/nixos-25.05";
     nixpkgs-droid.url = "github:NixOS/nixpkgs/nixos-24.05";
 
     # The Nix-on-Droid part.
@@ -23,12 +23,12 @@
 
     # The Normal Devices
     home-manager-pc = {
-      url = "github:nix-community/home-manager/release-24.11";
+      url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs-pc";
     };
 
     nixvim-pc = {
-      url = "github:nix-community/nixvim/nixos-24.11";
+      url = "github:nix-community/nixvim/nixos-25.05";
       inputs.nixpkgs.follows = "nixpkgs-pc";
     };
   };
@@ -55,7 +55,7 @@
 
             config = { ... }: {
               imports = [
-                nixvim-2405.homeManagerModules.nixvim
+                nixvim-droid.homeManagerModules.nixvim
                 ./home-manager/components/default.nix
               ];
 
