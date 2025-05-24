@@ -8,16 +8,19 @@
       nvim-autopairs.enable = true;
       rainbow-delimiters.enable = true;
       treesitter.enable = true;
+      web-devicons.enable = true;
       bufferline = {
         enable = true;
-        offsets = [
-          {
-            filetype = "NvimTree";
-            text = "File Explorer";
-            highlight = "Directory";
-            text_align = "left";
-          }
-        ];
+        settings = {
+          offsets = [
+            {
+              filetype = "NvimTree";
+              text = "File Explorer";
+              highlight = "Directory";
+              text_align = "left";
+            }
+          ];
+        };
       };
       nvim-tree = {
         enable = true;

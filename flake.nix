@@ -2,49 +2,49 @@
   description = "My NixOS/Nix-on-Droid config files.";
 
   inputs = {
-    nixpkgs-2411.url = "github:NixOS/nixpkgs/nixos-24.11";
-    nixpkgs-2405.url = "github:NixOS/nixpkgs/nixos-24.05";
+    nixpkgs-pc.url = "github:NixOS/nixpkgs/nixos-24.11";
+    nixpkgs-droid.url = "github:NixOS/nixpkgs/nixos-24.05";
 
     # The Nix-on-Droid part.
     nix-on-droid = {
       url = "github:nix-community/nix-on-droid/release-24.05";
-      inputs.nixpkgs.follows = "nixpkgs-2405";
+      inputs.nixpkgs.follows = "nixpkgs-droid";
     };
 
-    home-manager-2405 = {
+    home-manager-droid = {
       url = "github:nix-community/home-manager/release-24.05";
-      inputs.nixpkgs.follows = "nixpkgs-2405";
+      inputs.nixpkgs.follows = "nixpkgs-droid";
     };
 
-    nixvim-2405 = {
+    nixvim-droid = {
       url = "github:nix-community/nixvim/nixos-24.05";
-      inputs.nixpkgs.follows = "nixpkgs-2405";
+      inputs.nixpkgs.follows = "nixpkgs-droid";
     };
 
     # The Normal Devices
-    home-manager-2411 = {
+    home-manager-pc = {
       url = "github:nix-community/home-manager/release-24.11";
-      inputs.nixpkgs.follows = "nixpkgs-2411";
+      inputs.nixpkgs.follows = "nixpkgs-pc";
     };
 
-    nixvim-2411 = {
+    nixvim-pc = {
       url = "github:nix-community/nixvim/nixos-24.11";
-      inputs.nixpkgs.follows = "nixpkgs-2411";
+      inputs.nixpkgs.follows = "nixpkgs-pc";
     };
   };
 
   outputs = {
     self,
-    nixpkgs-2411,
-    nixpkgs-2405,
+    nixpkgs-pc,
+    nixpkgs-droid,
     nix-on-droid,
-    home-manager-2405,
-    nixvim-2405,
-    home-manager-2411,
-    nixvim-2411,
+    home-manager-droid,
+    nixvim-droid,
+    home-manager-pc,
+    nixvim-pc,
     }: {
     nixOnDroidConfigurations.default = nix-on-droid.lib.nixOnDroidConfiguration {
-      pkgs = import nixpkgs-2405 {
+      pkgs = import nixpkgs-droid {
         system = "aarch64-linux";
       };
       modules = [
@@ -66,8 +66,8 @@
       ];
     };
 
-    nixosConfigurations.ksakura-qemu-vm = nixpkgs-2411.lib.nixosSystem {
-      pkgs = import nixpkgs-2411 {
+    nixosConfigurations.ksakura-qemu-vm = nixpkgs-pc.lib.nixosSystem {
+      pkgs = import nixpkgs-pc {
         system = "x86_64-linux";
         config.allowUnfree = true;
       };
@@ -76,14 +76,14 @@
         ./devices/ksakura-qemu-vm/configuration.nix
         ./devices/ksakura-qemu-vm/hardware-configuration.nix
         ./home-manager/components/i3/packages.nix
-        home-manager-2411.nixosModules.home-manager
+        home-manager-pc.nixosModules.home-manager
         {
           home-manager = {
             useGlobalPkgs = true;
 
             users.sakura = { ... }: {
               imports = [
-                nixvim-2411.homeManagerModules.nixvim
+                nixvim-pc.homeManagerModules.nixvim
                 ./home-manager/components/default.nix
                 ./home-manager/components/i3/default.nix
               ];
@@ -95,27 +95,27 @@
       ];
     };
 
-    nixosConfigurations.ksakura-pc = nixpkgs-2411.lib.nixosSystem {
-      pkgs = import nixpkgs-2411 {
+    nixosConfigurations.ksakura-pc = nixpkgs-pc.lib.nixosSystem {
+      pkgs = import nixpkgs-pc {
         system = "x86_64-linux";
         config.allowUnfree = true;
-        config.nvidia.acceptLicense = true;
+        # config.nvidia.acceptLicense = true;
       };
       modules = [
         ./devices/common/configuration.nix
         ./devices/common/i18n.nix
         ./devices/ksakura-pc/configuration.nix
         ./devices/ksakura-pc/hardware-configuration.nix
-        ./devices/ksakura-pc/nvidia.nix
+        # ./devices/ksakura-pc/nvidia.nix
         ./home-manager/components/i3/packages.nix
-        home-manager-2411.nixosModules.home-manager
+        home-manager-pc.nixosModules.home-manager
         {
           home-manager = {
             useGlobalPkgs = true;
 
             users.sakura = { ... }: {
               imports = [
-                nixvim-2411.homeManagerModules.nixvim
+                nixvim-pc.homeManagerModules.nixvim
                 ./home-manager/components/default.nix
                 ./home-manager/components/i3/default.nix
               ];
