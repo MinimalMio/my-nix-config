@@ -5,6 +5,9 @@
     enable = true;
 
     settings = {
+      window = {
+        opacity = 0.9;
+      };
       font = {
         # normal = {
         #   family = "DroidSansMono Nerd Font Mono";

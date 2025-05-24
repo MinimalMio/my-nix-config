@@ -8,5 +8,6 @@
   ];
 
   services.xserver.windowManager.i3.enable = true;
+  services.picom.enable = true;
   programs.dconf.enable = true;
 }
