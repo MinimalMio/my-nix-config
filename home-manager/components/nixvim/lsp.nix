@@ -9,6 +9,9 @@
           clangd = {
             enable = true;
           };
+          cmake = {
+            enable = true;
+          };
         };
       };
     };
