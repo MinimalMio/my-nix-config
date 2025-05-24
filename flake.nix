@@ -102,6 +102,7 @@
       };
       modules = [
         ./devices/common/configuration.nix
+        ./devices/common/i18n.nix
         ./devices/ksakura-pc/configuration.nix
         ./devices/ksakura-pc/hardware-configuration.nix
         ./home-manager/components/i3/packages.nix
