@@ -99,6 +99,7 @@
       pkgs = import nixpkgs-2411 {
         system = "x86_64-linux";
         config.allowUnfree = true;
+        config.nvidia.acceptLicense = true;
       };
       modules = [
         ./devices/common/configuration.nix
