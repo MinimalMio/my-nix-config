@@ -67,7 +67,7 @@
   virtualisation.spiceUSBRedirection.enable = true;
 
   environment.systemPackages = with pkgs; [
-    vim wget git cmake qogir-theme qogir-icon-theme neovim clang-tools
+    vim wget git cmake qogir-theme qogir-icon-theme neovim clang-tools nekoray
   ];
 
   programs.gnupg.agent = {
