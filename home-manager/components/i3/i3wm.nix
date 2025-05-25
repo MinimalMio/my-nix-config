@@ -10,5 +10,9 @@
         "Mod4+r" = "exec rofi -show drun";
       };
     };
+    extraConfig = ''
+      exec_always --no-startup-id fcitx5
+      exec_always --no-startup-id nm-applet
+    '';
   };
 }
