@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./git/
-    ./nixvim/
+    ./git
+    ./nixvim
   ];
 }

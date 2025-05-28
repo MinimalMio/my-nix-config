@@ -48,7 +48,7 @@
         system = "aarch64-linux";
       };
       modules = [
-        ./devices/nix-on-droid/
+        ./devices/nix-on-droid
         {
           home-manager = {
             useGlobalPkgs = true;
@@ -56,7 +56,7 @@
             config = { ... }: {
               imports = [
                 nixvim-droid.homeManagerModules.nixvim
-                ./home-manager/components/default.nix
+                ./home-manager/components
               ];
 
               home.stateVersion = "24.05";
@@ -72,8 +72,8 @@
         config.allowUnfree = true;
       };
       modules = [
-        ./devices/common/
-        ./devices/ksakura-qemu-vm/
+        ./devices/common
+        ./devices/ksakura-qemu-vm
         ./home-manager/components/i3/packages.nix
         home-manager-pc.nixosModules.home-manager
         {
@@ -83,14 +83,14 @@
             users.sakura = { ... }: {
               imports = [
                 nixvim-pc.homeManagerModules.nixvim
-                ./home-manager/components/
-                ./home-manager/components/i3/
+                ./home-manager/components
+                ./home-manager/components/i3
               ];
 
               home.stateVersion = "24.11";
             };
           };
-        }
+        i3
       ];
     };
 
@@ -101,8 +101,8 @@
         # config.nvidia.acceptLicense = true;
       };
       modules = [
-        ./devices/common/
-        ./devices/ksakura-pc/
+        ./devices/common
+        ./devices/ksakura-pc
         ./home-manager/components/i3/packages.nix
         home-manager-pc.nixosModules.home-manager
         {
@@ -112,8 +112,8 @@
             users.sakura = { ... }: {
               imports = [
                 nixvim-pc.homeManagerModules.nixvim
-                ./home-manager/components/
-                ./home-manager/components/i3/
+                ./home-manager/components
+                ./home-manager/components/i3
               ];
 
               home.stateVersion = "24.11";
