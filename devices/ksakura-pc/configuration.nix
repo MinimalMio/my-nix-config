@@ -1,11 +1,6 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-    ];
-
   boot.loader.grub.enable = true;
   # boot.loader.grub.efiSupport = true;
   # boot.loader.grub.efiInstallAsRemovable = true;
@@ -26,28 +21,6 @@
   nix.settings.substituters = lib.mkForce [ "https://mirrors.ustc.edu.cn/nix-channels/store" ];
 
   i18n.defaultLocale = "en_US.UTF-8";
-  # console = {
-  #   font = "Lat2-Terminus16";
-  #   keyMap = "us";
-  #   useXkbConfig = true; # use xkb.options in tty.
-  # };
-
-  services.xserver.enable = true;
-  services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.excludePackages = [ pkgs.xterm ];
-  # services.xserver.desktopManager.xfce.enable = true;
-  # services.displayManager.defaultSession = "xfce";
-  
-  services.xserver.xkb.layout = "us";
-
-  # services.printing.enable = true;
-
-  services.pipewire = {
-    enable = true;
-    pulse.enable = true;
-  };
-
-  # services.libinput.enable = true;
 
   users.users.sakura = {
     isNormalUser = true;
@@ -57,26 +30,6 @@
       tree
     ];
   };
-
-  programs.firefox.enable = true;
-  programs.fish.enable = true;
-
-  programs.virt-manager.enable = true;
-  users.groups.libvirtd.members = [ "sakura" ];
-  virtualisation.libvirtd.enable = true;
-  virtualisation.spiceUSBRedirection.enable = true;
-
-  environment.systemPackages = with pkgs; [
-    vim wget git cmake qogir-theme qogir-icon-theme neovim clang-tools nekoray fastfetch
-    networkmanagerapplet
-  ];
-
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
-  };
-
-  services.openssh.enable = true;
 
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
