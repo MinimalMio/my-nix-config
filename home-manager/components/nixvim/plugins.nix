@@ -3,11 +3,14 @@
 {
   programs.nixvim = {
     plugins = {
-      lualine.enable = true;
       which-key.enable = true;
       nvim-autopairs.enable = true;
       rainbow-delimiters.enable = true;
       treesitter.enable = true;
+      lualine = {
+        enable = true;
+        globalstatus = true;
+      };
       bufferline = {
         enable = true;
         offsets = [
@@ -27,6 +30,20 @@
         settings = {
           direction = "float";
         };
+      };
+      noice = {
+        enable = true;
+        cmdline = {
+          enabled = false;
+        };
+        messages = {
+          enabled = false;
+        };
+      };
+      notify = {
+        enable = true;
+        timeout = 5000;
+        render = "default";
       };
     };
   };
