@@ -9,20 +9,16 @@
       # waylandFrontend = true;
       addons = with pkgs; [
         fcitx5-gtk
-        fcitx5-qt
         fcitx5-chinese-addons
         fcitx5-nord
       ];
-      settings = {
-        inputMethod = {
-          HotKey = "Control+space";
-        };
-        addons = {
-          pinyin = {
-            EnableCloudPinyin = true;
-          };
-        };
-      };
+      settings = {};
     };
+  };
+
+  environment.sessionVariables = rec {
+    GTK_IM_MODULE = "fcitx";
+    QT_IM_MODULE = "fcitx";
+    XMODIFIERS = "@im=fcitx";
   };
 }
