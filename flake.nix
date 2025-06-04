@@ -74,7 +74,6 @@
       modules = [
         ./devices/common
         ./devices/ksakura-qemu-vm
-        ./home-manager/components/i3/packages.nix
         home-manager-pc.nixosModules.home-manager
         {
           home-manager = {
@@ -84,7 +83,6 @@
               imports = [
                 nixvim-pc.homeManagerModules.nixvim
                 ./home-manager/components
-                ./home-manager/components/i3
               ];
 
               home.stateVersion = "24.11";
@@ -103,7 +101,7 @@
       modules = [
         ./devices/common
         ./devices/ksakura-pc
-        ./home-manager/components/i3/packages.nix
+        ./syscomponents/ksakura-pc.nix
         home-manager-pc.nixosModules.home-manager
         {
           home-manager = {
