@@ -31,20 +31,6 @@
           direction = "float";
         };
       };
-      noice = {
-        enable = true;
-        cmdline = {
-          enabled = false;
-        };
-        messages = {
-          enabled = false;
-        };
-      };
-      notify = {
-        enable = true;
-        timeout = 5000;
-        render = "default";
-      };
     };
   };
 }
