@@ -52,6 +52,7 @@
         {
           home-manager = {
             useGlobalPkgs = true;
+            backupFileExtension = "*.bak";
 
             config = { ... }: {
               imports = [
@@ -78,6 +79,7 @@
         {
           home-manager = {
             useGlobalPkgs = true;
+            backupFileExtension = "*.bak";
 
             users.sakura = { ... }: {
               imports = [
@@ -105,6 +107,7 @@
         {
           home-manager = {
             useGlobalPkgs = true;
+            backupFileExtension = "*.bak";
 
             users.sakura = { ... }: {
               imports = [
