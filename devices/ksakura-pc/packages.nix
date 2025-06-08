@@ -11,7 +11,7 @@
 
   environment.systemPackages = with pkgs; [
     vim wget git cmake qogir-theme qogir-icon-theme neovim clang-tools nekoray fastfetch
-    networkmanagerapplet
+    networkmanagerapplet telegram-desktop
   ];
 
   programs.gnupg.agent = {

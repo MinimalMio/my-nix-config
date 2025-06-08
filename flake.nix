@@ -101,7 +101,6 @@
       modules = [
         ./devices/common
         ./devices/ksakura-pc
-        ./syscomponents/ksakura-pc.nix
         home-manager-pc.nixosModules.home-manager
         {
           home-manager = {
