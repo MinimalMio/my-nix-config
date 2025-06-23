@@ -5,7 +5,7 @@
     ./plugins.nix
     ./keyboard.nix
     ./lsp.nix
-    ./completion.nix
+    # ./completion.nix
  ];
 
   programs.nixvim = {
@@ -20,6 +20,7 @@
       laststatus = 3;
       expandtab = true;
       shell = "fish";
+      nowrap = true;
     };
 
     colorschemes = {
