@@ -11,6 +11,7 @@
       #   enable = true;
       #   globalstatus = true;
       # };
+      wakatime.enable = true;
       bufferline = {
         enable = true;
         offsets = [

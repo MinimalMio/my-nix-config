@@ -20,6 +20,7 @@
       laststatus = 3;
       expandtab = true;
       shell = "fish";
+      wrap = false;
     };
 
     colorschemes = {
