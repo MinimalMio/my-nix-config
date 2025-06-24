@@ -3,14 +3,14 @@
 {
   programs.nixvim = {
     plugins = {
-      which-key.enable = true;
+      # which-key.enable = true;
       nvim-autopairs.enable = true;
-      rainbow-delimiters.enable = true;
-      treesitter.enable = true;
-      lualine = {
-        enable = true;
-        globalstatus = true;
-      };
+      # rainbow-delimiters.enable = true;
+      # treesitter.enable = true;
+      # lualine = {
+      #   enable = true;
+      #   globalstatus = true;
+      # };
       bufferline = {
         enable = true;
         offsets = [
