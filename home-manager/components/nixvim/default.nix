@@ -4,7 +4,7 @@
   imports = [
     ./plugins.nix
     ./keyboard.nix
-    ./lsp.nix
+    # ./lsp.nix
     # ./completion.nix
  ];
 
