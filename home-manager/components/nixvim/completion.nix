@@ -11,6 +11,7 @@
 
       lspkind = {
         enable = true;
+        mode = "symbol_text";
         cmp = {
           enable = true;
           menu = {
