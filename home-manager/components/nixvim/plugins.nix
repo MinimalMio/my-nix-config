@@ -6,12 +6,12 @@
       # which-key.enable = true;
       nvim-autopairs.enable = true;
       # rainbow-delimiters.enable = true;
-      # treesitter.enable = true;
+      treesitter.enable = true;
       # lualine = {
       #   enable = true;
       #   globalstatus = true;
       # };
-      wakatime.enable = true;
+      # wakatime.enable = true;
       bufferline = {
         enable = true;
         offsets = [

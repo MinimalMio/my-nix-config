@@ -54,6 +54,17 @@
             { name = "buffer"; }
             { name = "luasnip"; }
           ];
+          window = {
+            completion = {
+              border = "rounded";
+              winheighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel";
+            };
+            documentation = {
+              border = "rounded";
+              maxheight = 15;
+              side = "bottom";
+            };
+          };
         };
       };
     };
