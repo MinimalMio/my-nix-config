@@ -19,5 +19,7 @@
     enableSSHSupport = true;
   };
 
+  programs.nix-ld.enable = true;
+
   services.openssh.enable = true;
 }
